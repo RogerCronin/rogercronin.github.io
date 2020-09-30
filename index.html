@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mixed Laughs - Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" type="image/png" href="/assets/favicon.png">
+</head>
+<body>
+
+  <div id="leftBarDiv">
+    <h1>Mixed Laughs</h1>
+    <p>
+      Welcome to my website! I hope you like it. I sure did spend a lot of time working on it.
+      Feel free to browse and scroll to your hearts content. Fair warning, most of the stuff
+      to the right won't work on mobile.
+    </p>
+    <p>
+      If you’re from the school district then please don’t block this webpage. Thanks!
+    </p>
+    <hr>
+    <h2>Recently Updated:</h2>
+    <ul>
+      <li>Oh hey I own this website</li>
+      <li>Kinda forgot it existed to be honest</li>
+      <li>Now it looks better, I hope</li>
+      <li>I still don't know how to make websites look good</li>
+    </ul>
+    <h2>Todo:</h2>
+    <ul>
+      <li><s>Upload</s> Remake the new Gnome Fighter version because I accidentally deleted it</li>
+      <li>Actually I should probably just remake Gnome Fighter altogether</li>
+      <li>Make Mixed Laughs work on mobile (you get to delete this later)</li>
+    </ul>
+  </div>
+
+  <div id="rightBarDiv">
+
+    <div class="linkBox" onclick="location.href='/javascriptmessage'">
+      <div class="linkBoxMain">
+        <img src="/assets/jsm.png">
+        <div>
+          <p>JavaScript Message v3.0</p>
+          <p>The third iteration of JavaScript Message, an online messaging platform intended for in-school use.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="linkBox" onclick="location.href='/gnomefighter/classic'">
+      <div class="linkBoxMain">
+        <img src="/assets/gnomefighter.png">
+        <div>
+          <p>Gnome Fighter</p>
+          <p>A riveting button-mashing fighting game staring Gnome and Anti-Gnome.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="linkBox" onclick="location.href='/twitchtetris'">
+      <div class="linkBoxMain">
+        <img src="/assets/twitchtetris.png">
+        <div>
+          <p>TwitchTetris v2.1</p>
+          <p>TwitchTetris, ported to Mixed Laughs with some pretty groovy improvements.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="linkBox" onclick="location.href='/russianroulette'">
+      <div class="linkBoxMain">
+        <img src="/assets/russianroulette.png">
+        <div>
+          <p>Russian Roulette</p>
+          <p>The worst party game you could ever play. Your ears might hate you.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+<!-- normal app
+<div class="linkBox" onclick="location.href='/javascriptmessage'">
+  <div class="linkBoxMain">
+    <img src="1.png">
+    <div>
+      <p>JavaScript Message v3.0</p>
+      <p>The third iteration of JavaScript Message, an online messaging platform intended for in-school use.</p>
+    </div>
+  </div>
+</div>
+-->
+
+<!-- list app
+<div class="linkBox" onclick="linkBoxExtend(this)">
+  <div class="linkBoxMain">
+    <img src="2.png">
+    <div>
+      <p>Gnome Fighter</p>
+      <p>A riveting button-mashing fighting game staring Gnome and Anti-Gnome.</p>
+    </div>
+  </div>
+  <div class="linkBoxSubDiv">
+    <br>
+    <p class="linkBoxSubitem" onclick="location.href='newurl.html'">Link 1</p>
+    <p class="linkBoxSubitem" onclick="location.href='newurl.html'">Link 2</p>
+  </div>
+</div>
+-->
+
+</body>
+<script>
+  const linkBoxExtend = element => element.classList.contains("linkBoxExtended") ? element.classList.remove("linkBoxExtended") : element.classList.add("linkBoxExtended")
+
+  function toggleImg() {
+    let disp
+    window.innerWidth < 1350 ? disp = "none" : disp = "block"
+    document.querySelectorAll(".linkBox img").forEach(e => e.style.display = disp)
+  }
+</script>
+</html>
