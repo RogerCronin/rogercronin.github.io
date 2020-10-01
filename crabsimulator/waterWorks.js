@@ -226,7 +226,7 @@ function randomDeath() {
     "as a crab",
     "from carbon monoxide poisoning",
     "from really bad Chinese food",
-    "from CoVID-19",
+    "from COVID-19",
     "from fall damage",
     "in the trenches",
     "in a compromising position",
