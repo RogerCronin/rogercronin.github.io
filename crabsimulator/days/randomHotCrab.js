@@ -10,7 +10,7 @@ export async function execute(queue){
   await fprint("Damn, she's kinda hot tho.\n", "green")
   await fprint("Ikr?\n", "cyan")
   await fprint("Wave back?\n", "green")
-  let answer = choice(["Yeah","Nah"])
+  let answer = await choice(["Yeah","Nah"])
 
     if (answer == 1){
         await fprint("Ok, I'm gonna do it.\n", "cyan")
