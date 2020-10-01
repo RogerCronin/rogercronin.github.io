@@ -32,7 +32,8 @@ async function game(flag) {
     clear()
     await fprint("DAY " + window.days + "\n", "white", 1, 0)
     var dayString = queue.shift()
-    var day = await import(dayString)
+    //https://unpkg.com/crab-simulator@1.0.0/waterWorks.js
+    var day = await import("https://unpkg.com/crab-simulator@1.0.0" + dayString.slice(1))
     queue = await day.execute(queue)
     if(queue.length == 0 && window.state == 0) { // if queue is empty and not dead on the last day
       window.state = -1 // set state to win
