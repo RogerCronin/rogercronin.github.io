@@ -1,7 +1,7 @@
 import { fprint, choice, clear, pause } from "../waterWorks.js"
 import * as config from "../waterWorks.js"
 
-async function execute(queue){
+export async function execute(queue){
   await fprint("Sigh, just another lonely walk down the street.", "cyan", 0)
   await fprint("You think, gloomily scuttling along.\n", "dim")
   await fprint("You look around.\n", "dim")
