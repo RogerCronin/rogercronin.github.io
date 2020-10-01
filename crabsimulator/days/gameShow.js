@@ -1,5 +1,5 @@
-import { fprint, choice, clear, pause } from "../../waterWorks.js"
-import * as config from "../../waterWorks.js"
+import { fprint, choice, clear, pause } from "../waterWorks.js"
+import * as config from "../waterWorks.js"
 
 const failResponses = ["Oof. Nope.", "Oh I'm sorry. That's not correct.", "Nope! You dummy!", "You utter fool, that's wrong!", "Nah dude, not even close.", "Was that a guess? Not a good one.", "Bad answer!", "Dummy.", "Idiot.", "Fool.", "Really? That's the answer you went with?"]
 

@@ -1,5 +1,5 @@
-import { fprint, choice, clear, pause } from "../../waterWorks.js"
-import * as config from "../../waterWorks.js"
+import { fprint, choice, clear, pause } from "../waterWorks.js"
+import * as config from "../waterWorks.js"
 
 export async function execute(queue) {
 	await fprint("A visibly old male crab approaches you out of the shadows.\n", "dim", 1)

@@ -1,5 +1,5 @@
-import { fprint, choice, clear, pause } from "../../waterWorks.js"
-import * as config from "../../waterWorks.js"
+import { fprint, choice, clear, pause } from "../waterWorks.js"
+import * as config from "../waterWorks.js"
 
 export async function execute(queue) {
   await fprint("What the hell? Why do you need to be over 25 to purchase a Panera Bread giftcard?\n", "cyan")

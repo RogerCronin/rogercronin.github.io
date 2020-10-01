@@ -1,5 +1,5 @@
-import { fprint, choice, clear, pause, dayPlural } from "../../waterWorks.js"
-import * as config from "../../waterWorks.js"
+import { fprint, choice, clear, pause } from "../waterWorks.js"
+import * as config from "../waterWorks.js"
 
 export async function execute(queue){
     async function purchaseSomeGoods_oldBay(){
