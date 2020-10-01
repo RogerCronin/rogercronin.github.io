@@ -29,7 +29,7 @@ export async function execute(queue){
         await fprint("Experience + 1", "rainbow", 2)
         await fprint("Huh.\n", "rainbow", 2)
         queue.unshift("./days/chainDays/hotCrabSecondMeeting.js")
-        queue = shuffleArray(queue)
+        queue = config.shuffleArray(queue)
         window.experience++
 
     } else if (answer == 2){
