@@ -20,7 +20,7 @@ export async function execute(queue) {
     await fprint("Street smarts + 1", "rainbow", 1)
     await fprint("Experience + 1\n", "rainbow", 2)
     window.experience++
+    queue.unshift("./days/multiDays/robberyTime/robberyTime_4.js")
   }
-  queue.unshift("./days/multiDays/robberyTime/robberyTime_4.js")
   return queue
 }

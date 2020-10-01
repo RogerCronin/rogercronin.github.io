@@ -38,6 +38,7 @@ export async function execute(queue) {
       await fprint("You spend the rest of the day on your floor with cray-ons and poster board.\n", "dim")
       await fprint("Oh boy, all the other drug dealers are gonna be sooo jealous of my posters!", "cyan", 0)
       await fprint("You think as you drift off to sleep.\n", "dim")
+      queue.unshift("./days/multiDays/oldGuyDrugs/oldGuyDrugs_3.js")
     }
   } else if(answer == 3) {
     await fprint("No, no, I shouldn't do this.\n","cyan")
@@ -56,6 +57,5 @@ export async function execute(queue) {
     await fprint("Is the last thing you muster out before your head is swept underwater.\n", "dim", 2)
     window.state = "It would seem that crabs would prefer to have their dying wishes carried out. Keep that in mind.07"
   }
-  queue.unshift("./days/multiDays/oldGuyDrugs/oldGuyDrugs_3.js")
   return queue
 }
