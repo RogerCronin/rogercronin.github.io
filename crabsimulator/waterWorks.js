@@ -147,10 +147,11 @@ const choice = array => new Promise(async (resolve, reject) => {
   fprint("", "cyan", 0, 0)
 	while(true) {
 		let answer = await awaitInput()
-    fprint(answer + "\n", "cyan", 0, 0)
+    fprint(answer, "cyan", 0, 0)
     answer = parseInt(answer.slice(3))
 		if(answer >= 1 && answer <= array.length) {
       input.classList.remove("visible")
+      fprint("", "cyan", 0, 0)
 			resolve(answer)
       break
 		} else {
