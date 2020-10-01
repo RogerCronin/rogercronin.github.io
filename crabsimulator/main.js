@@ -1,7 +1,7 @@
 import { fprint, choice, clear, pause } from "./waterWorks.js"
 import * as config from "./waterWorks.js"
 
-window.debug = true
+window.debug = false
 window.days = 0 // number of days
 window.experience = 0 // exp level
 window.personality = 0 // positive = good, negative = bad

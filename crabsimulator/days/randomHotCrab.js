@@ -26,7 +26,7 @@ export async function execute(queue){
         await fprint("She and her friend walk off, giggling.\n", "dim")
         await fprint("Huh.\n", "cyan", 2)
         await fprint("Huh.\n", "green", 2)
-        await fprint("Experience + 1", "rainbow", 2)
+        await fprint("Experience + 1\n", "rainbow", 2)
         await fprint("Huh.\n", "rainbow", 2)
         queue.unshift("./days/chainDays/hotCrabSecondMeeting.js")
         queue = config.shuffleArray(queue)
