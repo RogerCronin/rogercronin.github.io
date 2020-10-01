@@ -21,7 +21,7 @@ function generateQueue(flag) {
     "./days/purchaseSomeGoods.js",
     "./days/cookingCompetition.js",
     "./days/crabExam.js",
-    ".days/firstContact.js",
+    "./days/firstContact.js",
     "./days/fisherman.js",
     "./days/forwardScuttle.js",
     "./days/gameShow.js",
