@@ -26,7 +26,7 @@ export async function execute(queue) {
     await fprint("The lobster walks off in a huff, all thanks to you. Good going.\n", "dim", 1)
     await fprint("Racism + 3", "rainbow", 1)
   }
-  fprint("Experience + 1\n", "rainbow", 2)
+  await fprint("Experience + 1\n", "rainbow", 2)
   window.experience++
 	return queue
 }
