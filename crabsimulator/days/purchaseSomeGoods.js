@@ -22,7 +22,7 @@ export async function execute(queue){
         await fprint("You place a bag of white bread in your shopping cart and cross it off your list.\n", "dim", 1)
     } else {
         await fprint("Might as well eat healthier now that I'm a crab.\n", "cyan")
-        await fprint("Wow, only " + window.days + " " + dayPlural() + " old and already making good life choices? I'm proud.\n", "green", 1)
+        await fprint("Wow, only " + window.days + " " + config.dayPlural() + " old and already making good life choices? I'm proud.\n", "green", 1)
         await fprint("You proudly place a bag of multigrain bread in your shopping cart and cross it off your list.\n", "dim", 1)
       }
     await fprint("Right, what now?\n", "cyan")
