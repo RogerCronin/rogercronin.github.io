@@ -22,19 +22,23 @@
     <hr>
     <h2>Recently Updated:</h2>
     <ul>
-      <li>Added Crab Simulator v1.4</li>
-      <li>Fixed a game-breaking bug</li>
-      <li>Fixed another game-breaking bug (thanks Ib)</li>
-      <li>More features soon to come!</li>
+      <li>Added Crab Simulator v1.3 download</li>
+			<li>Added Crab Simulator TSA</li>
+      <li>Packaged all the Crab Simulators into a nice little widget</li>
     </ul>
     <h2>Todo:</h2>
     <ul>
-      <li><s>Upload</s> Remake the new Gnome Fighter version because I accidentally deleted it</li>
-      <li>Actually I should probably just remake Gnome Fighter altogether</li>
       <li>Update TwitchTetris controls screen</li>
       <li>Update Russian Roulette and make a favicon for it</li>
       <li>Move JavaScript Message v4.0 to Mixed Laughs</li>
+			<li>Add a bunch of tiny projects to Code Playground</li>
+			<li>New Super Gnome Fighter is on the horizon!</li>
+			<li>Progress on Crab Simulator 2 has resumed</li>
     </ul>
+		<hr>
+		<span class="socialRow"><img src="/assets/twitter.png"></img><a href="https://twitter.com/brackets_square" target="_blank">@brackets_square</a></span><br>
+		<span class="socialRow"><img src="/assets/github.png"></img><a href="https://github.com/RogerCronin" target="_blank">RogerCronin</a></span><br>
+		<span class="socialRow"><img src="/assets/discord.png"></img><p>Roger#4803</p></span>
   </div>
 
   <div id="rightBarDiv">
@@ -79,50 +83,38 @@
       </div>
     </div>
 
-    <div class="linkBox" onclick="location.href='/crabsimulator'">
-      <div class="linkBoxMain">
-        <img src="/assets/crabsimulator.png">
-        <div>
-          <p>Crab Simulator v1.4</p>
-          <p>The definitive edition of Crab Simulator, now on the web!</p>
-        </div>
-      </div>
-    </div>
+		<div class="linkBox" onclick="linkBoxExtend(this)">
+		  <div class="linkBoxMain">
+		    <img src="/assets/crabsimulator.png">
+		    <div>
+		      <p>Crab Simulator</p>
+		      <p>The full collection of all titles in the Crab Simulator franchise!</p>
+		    </div>
+		  </div>
+		  <div class="linkBoxSubDiv">
+		    <br>
+		    <p class="linkBoxSubitem" onclick="location.href='/crabsimulator/CrabSimulator1.4'">Crab Simulator v1.4</p>
+		    <p class="linkBoxSubitem" onclick="event.stopPropagation();location.href='/crabsimulator/CrabSimulator1.3.zip'">Crab Simulator v1.3 (download)</p>
+				<p class="linkBoxSubitem" onclick="location.href='/crabsimulator/CrabSimulatorTSA'">Crab Simulator TSA (PG spinoff for a competition)</p>
+		  </div>
+		</div>
 
   </div>
-
-<!-- normal app
-<div class="linkBox" onclick="location.href='/javascriptmessage'">
-  <div class="linkBoxMain">
-    <img src="1.png">
-    <div>
-      <p>JavaScript Message v3.0</p>
-      <p>The third iteration of JavaScript Message, an online messaging platform intended for in-school use.</p>
-    </div>
-  </div>
-</div>
--->
-
-<!-- list app
-<div class="linkBox" onclick="linkBoxExtend(this)">
-  <div class="linkBoxMain">
-    <img src="2.png">
-    <div>
-      <p>Gnome Fighter</p>
-      <p>A riveting button-mashing fighting game staring Gnome and Anti-Gnome.</p>
-    </div>
-  </div>
-  <div class="linkBoxSubDiv">
-    <br>
-    <p class="linkBoxSubitem" onclick="location.href='newurl.html'">Link 1</p>
-    <p class="linkBoxSubitem" onclick="location.href='newurl.html'">Link 2</p>
-  </div>
-</div>
--->
 
 </body>
 <script>
-  const linkBoxExtend = element => element.classList.contains("linkBoxExtended") ? element.classList.remove("linkBoxExtended") : element.classList.add("linkBoxExtended")
+
+	function linkBoxExtend(element) {
+		if(element.classList.contains("linkBoxExtended")) {
+			element.classList.remove("linkBoxExtended")
+			element.style.removeProperty("height")
+		} else {
+			element.classList.add("linkBoxExtended")
+			element.style.height = `${element.scrollHeight - 30}px`
+		}
+	}
+
+  //const linkBoxExtend = element => element.classList.contains("linkBoxExtended") ? element.classList.remove("linkBoxExtended") : element.classList.add("linkBoxExtended")
 
   function toggleImg() {
     let disp

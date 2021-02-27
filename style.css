@@ -6,8 +6,24 @@ h1, h2 {
   font-weight: normal;
 }
 
-p, li {
+p, li, a {
   font-family: "Open Sans", sans-serif;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  text-decoration: underline;
 }
 
 body {
@@ -47,7 +63,7 @@ body {
   cursor: pointer;
   margin-bottom: 1em;
   transition: 0.3s;
-  max-height: 5em;
+	height: 5em;
   overflow-y: hidden;
   overflow-wrap: break-word;
   user-select: none;
@@ -58,7 +74,7 @@ body {
 }
 
 .linkBoxExtended {
-  max-height: 15.5em;
+
 }
 
 .linkBoxMain {
@@ -95,4 +111,11 @@ body {
   padding: 1em;
   background-color: gray;
   border-radius: 1em;
+}
+
+.socialRow a, .socialRow p {
+	display: inline;
+	position: relative;
+	bottom: 0.5em;
+	left: 0.5em;
 }
