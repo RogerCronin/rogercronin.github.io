@@ -1,143 +1,103 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Russian Roulette</title>
-    <meta charset="UTF-8">
-    <!--<link rel="shortcut icon" type="image/png" href="/favicon.png"/>-->
+  <title>Russian Roulette</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/png" href="/assets/favicon.png">
 </head>
-
-<body style="text-align:center;padding:50px;">
-
-<div id="mainButtons">
-<input type="button" onClick="atStart()" value="Spin Chamber at Start" class="start"></input>
-<input type="button" onClick="everyTime()" value="Spin Chamber Every Turn" class="start"></input>
-</div>
-<div id="startButtonDiv" style="display:none;">
-<input type="button" id="startButton" onClick="atStartClick()" value="Click to Fire" class="buttons"></input>
-</div>
-<div id="everyButtonDiv" style="display:none;">
-<input type="button" id="everyButton" onClick="everyTimeClick()" value="Click to Fire" class="buttons"></input>
-</div>
-<div id="resetButton" style="display:none;">
-<input type="button" id="reset" onClick="reset()" value="Click to Reset" class="reset"></input>
-</div>
-<audio id="music">
-	<source src="music.mp3" type="audio/mpeg">
-</audio>
-
+<body>
+	<div id="left" onclick="leftClick()">
+		<p>Spin at start</p>
+	</div>
+	<div id="right" onclick="rightClick()">
+		<p>Spin every turn</p>
+	</div>
 </body>
-
 <script>
-function id(id) {return document.getElementById(id)}
-var chamber
 
-function atStart() {
-	id("mainButtons").style.display = "none"
-	id("startButton").value = "Click to Fire"
-	chamber = Math.floor(Math.random() * 6) + 1
-	console.log(chamber)
-	id("startButtonDiv").style.display = "block"
-}
+let singleButton = false
+const left = document.getElementById("left")
+const right = document.getElementById("right")
 
-function everyTime() {
-	id("mainButtons").style.display = "none"
-	id("everyButton").value = "Click to Fire"
-	id("everyButtonDiv").style.display = "block"
-}
-
-function atStartClick() {
-	if(id("startButton").value == "Click to Fire") {
-		id("startButton").value = "..."
-		setTimeout(atStartFire, (Math.floor(Math.random() * 4) + 2) * 1000)
-	}
-	if(id("startButton").value == "It Didn't Fire...") {
-		id("startButton").value = "Click to Fire"
-	}
-}
-
-function everyTimeClick() {
-	if(id("everyButton").value == "Click to Fire") {
-		id("everyButton").value = "..."
-		setTimeout(everyTimeFire, (Math.floor(Math.random() * 4) + 2) * 1000)
-	}
-	if(id("everyButton").value == "It Didn't Fire...") {
-		id("everyButton").value = "Click to Fire"
-	}
-}
-
-function atStartFire() {
-	chamber--
-	console.log(chamber)
-	if(chamber == 0) {
-		id("music").play()
-		id("startButtonDiv").style.display = "none"
-		id("resetButton").style.display = "block"
+function leftClick() {
+	if(singleButton) {
+		twoButton()
 	} else {
-		id("startButton").value = "It Didn't Fire..."
+		oneButton()
 	}
 }
 
-function everyTimeFire() {
-	chamber = Math.floor(Math.random() * 6)
-	console.log(chamber)
-	if(chamber == 0) {
-		id("music").play()
-		id("everyButtonDiv").style.display = "none"
-		id("resetButton").style.display = "block"
-	} else {
-		id("everyButton").value = "It Didn't Fire..."
-	}
+function rightClick() {
+
 }
 
-function reset() {
-	id("music").pause()
-	id("music").currentTime = 0
-	id("resetButton").style.display = "none"
-	id("mainButtons").style.display = "block"
+function oneButton() {
+	singleButton = true
+	sizeStuff()
+}
+
+function twoButton() {
+	singleButton = false
+	sizeStuff()
+}
+
+window.addEventListener("resize", sizeStuff)
+
+sizeStuff()
+
+function sizeStuff() {
+	let vh = window.innerHeight * 0.01
+	if(window.innerWidth < 1000) { // vertical
+		document.body.style.flexDirection = "column"
+		left.style.width = "100vw"
+		right.style.width = "100vw"
+		if(singleButton) {
+			left.style.padding = `0 calc(${vh}px * 100)`
+			right.style.display = "none"
+			left.style.height = `calc(${vh}px * 100)`
+		} else {
+			right.style.display = "inline"
+			left.style.height = `calc(${vh}px * 50)`
+			right.style.height = `calc(${vh}px * 50)`
+		}
+	} else { // horizontal
+		document.body.style.flexDirection = "row"
+		left.style.height = "100vh"
+		right.style.height = "100vh"
+		if(singleButton) {
+			right.style.display = "none"
+			left.style.width = "100vw"
+		} else {
+			right.style.display = "inline"
+			left.style.width = "50vw"
+			right.style.width = "50vw"
+		}
+	}
 }
 
 </script>
-
-<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
 <style>
-body {
-	font-family: 'Lato';
-}
-input {
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  width: 400px;
-  border-radius: 8px;
+	@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+
+	body {
+		font-family: "Roboto", sans-serif;
+		color: white;
+		text-align: center;
+		margin: 0px;
+		display: flex;
+	}
+
+	#left {
+		background-color: green;
+	}
+
+	#right {
+		background-color: red;
+	}
+
 }
 
-.start {
-  background-color: #4caf50;
-  transition-duration: 0.2s;
-}
-.start:hover {
-	background-color: #419343;
-}
-
-.buttons {
-	background-color: #008cba;
-	transition-duration: 0.2s;
-}
-.buttons:hover {
-	background-color: #00799e;
-}
-
-.reset {
-	background-color: #f44336;
-	transition-duration: 0.2s;
-}
-.reset:hover {
-	background-color: #d83c31;
-}
 </style>
-
 </html>
