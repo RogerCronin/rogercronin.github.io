@@ -53,6 +53,14 @@ body {
   scrollbar-width: none;  /* Firefox */
 }
 
+#recentlyUpdatedDiv {
+	margin: 0em 0em 1.9em 0em;
+}
+
+#socialsDiv {
+	margin-top: 1em;
+}
+
 /* box containing app */
 .linkBox {
   padding: 1em;
