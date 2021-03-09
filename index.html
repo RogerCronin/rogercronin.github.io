@@ -23,15 +23,14 @@
 		<div id="recentlyUpdatedDiv">
     	<h2>Recently Updated:</h2>
     	<ul>
-      	<li>Added Crab Simulator v1.3 download</li>
-				<li>Added Crab Simulator TSA</li>
+				<li>JSM v4.0 is finally out after being finished for a year</li>
+				<li>I didn't test it very much, so lemme know if you find something weird</li>
       	<li>Packaged all the Crab Simulators into a nice little widget</li>
 				<li>Remade Russian Roulette</li>
     	</ul>
     	<h2>Todo:</h2>
     	<ul>
       	<li>Update TwitchTetris controls screen</li>
-      	<li>Move JavaScript Message v4.0 to Mixed Laughs</li>
 				<li>Add a bunch of tiny projects to Code Playground</li>
 				<li>New Super Gnome Fighter is on the horizon!</li>
 				<li>Progress on Crab Simulator 2 has resumed</li>
@@ -47,12 +46,12 @@
 
   <div id="rightBarDiv">
 
-    <div class="linkBox" onclick="alert('\nJavaScript Message v4.0 is coming soon!\n\nSupport for v3.1 has stopped.')">
+    <div class="linkBox" onclick="location.href='/javascriptmessage'">
       <div class="linkBoxMain">
         <img src="/assets/jsm.png">
         <div>
-          <p>JavaScript Message v3.0</p>
-          <p>The third iteration of JavaScript Message, an online messaging platform intended for in-school use.</p>
+          <p>JavaScript Message v4.0</p>
+          <p>The fourth iteration of JavaScript Message, an social platform intended for in-school use.</p>
         </div>
       </div>
     </div>
@@ -117,8 +116,6 @@
 			element.style.height = `${element.scrollHeight - 30}px`
 		}
 	}
-
-  //const linkBoxExtend = element => element.classList.contains("linkBoxExtended") ? element.classList.remove("linkBoxExtended") : element.classList.add("linkBoxExtended")
 
   function toggleImg() {
     let disp
